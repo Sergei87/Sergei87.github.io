@@ -29,30 +29,24 @@ $(window).load(function() {
     directionNav: false
   
   });
-});
+
 
 
 $('.menu__link').on('click', function (e) {
 	
 	e.preventDefault();
-	$('.content-container').toggle();
-	$('.active-link').removeClass();
+
+	$('.content').toggle();
+	$('.active-link').removeClass('active-link');
 	$(this).addClass('active-link');
 });
 
-$('.slideshow-bar__item').on('click', function (e) {
-	  var n=$(this).index();
-	  $('.mask').removeAttr('style');
-	  $(this).children('.mask').css('opacity', '0');
-	  console.log(n);  
-	   var url = 'url(img/bg' + n + '.jpg)';
-	   e.preventDefault();
-	$('.wrapper').css('background-image', url);
-})
+
 
 $('.close-button').on('click', function (e) {
 	$(this).parent().hide();
-	$('.active-link').removeClass();
+	$('.active-link').removeClass('active-link');
 	$('.menu__link:first').addClass('active-link');
-
 })
+
+});
